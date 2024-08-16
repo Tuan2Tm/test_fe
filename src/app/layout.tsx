@@ -3,6 +3,7 @@ import { Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import MenuMobile from "@/components/menu";
 
 const inter = Jost({ subsets: ["latin"] });
 
@@ -19,9 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <div className="flex flex-col">
+          <Navbar />
+          {children}
+          <Footer />
+          <MenuMobile />
+        </div>
       </body>
     </html>
   );
